@@ -1,5 +1,7 @@
 :: soophud build command script
 :: Bundles all the HUD files into soop_hud_all.vpk
+::
+:: Automatically install them by adding an post-build-all.cmd file that copies.
 
 @ECHO OFF
 
@@ -36,6 +38,10 @@ IF EXIST soop_hud_all.vpk REM soop_hud_all.vpk
 ECHO Building soop_hud_all VPK file.
 VPK ".\soop_hud_all"
 ECHO.
+
+:: Run post-install script to copy VPK files or whatever.
+:: This runs before cleanup in case you'd rather just copy those for live testing.
+IF EXIST post-build-all.cmd CALL post-build-all.cmd
 
 :: Clean up temporary directory.
 ECHO Cleaning up temporary files.

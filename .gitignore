@@ -1,5 +1,8 @@
 # Build script configuration #
 soophud-build-filepaths.cmd
+post-build.cmd
+post-build-all.cmd
+post-build-sync.cmd
 
 # Packed files #
 *.vpk

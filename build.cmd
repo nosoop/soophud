@@ -1,12 +1,12 @@
 :: soophud build command script
 :: Invokes VPK on each directory, creating one VPK file per directory.
+::
+:: Add an post-install.cmd file to do stuff.
 
 @ECHO OFF
 
 :: Set the path to VPK for this session if supplied.
-IF EXIST soophud-build-filepaths.cmd (
-    CALL soophud-build-filepaths.cmd
-)
+IF EXIST soophud-build-filepaths.cmd CALL soophud-build-filepaths.cmd
 
 :: Check if the VPK executable is in the executable path.
 VPK 2>&1> NUL
@@ -30,6 +30,9 @@ FOR /D %%D IN (*) DO (
     REN "%%D.vpk" "%%D.vpk"
     ECHO.
 )
+
+:: Run post-install script to copy VPK files or whatever.
+IF EXIST post-install.cmd CALL post-install.cmd
 
 :DONE
 ECHO Press any key to quit.
