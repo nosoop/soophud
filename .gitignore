@@ -1,0 +1,5 @@
+# Build script configuration #
+soophud-build-filepaths.cmd
+
+# Packed files #
+*.vpk
