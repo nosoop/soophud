@@ -4,5 +4,9 @@ post-build.cmd
 post-build-all.cmd
 post-build-sync.cmd
 
+# Duplicates and backups #
+*.new.res
+*.res.bak
+
 # Packed files #
 *.vpk
