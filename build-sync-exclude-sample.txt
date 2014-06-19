@@ -1,0 +1,4 @@
+-- Add string values for files to not include when syncing.
+-- Useful if there's a particular HUD component that is causing the game to hang.
+.new.res
+.res.bak

@@ -8,7 +8,7 @@
 :: Copy each directory into one.
 FOR /D %%D IN (*) DO (
     ECHO Copying %%D to soop_hud_all.
-    XCOPY "%%~fD" ".\soop_hud_all\" /S > NUL
+    XCOPY "%%~fD" ".\soop_hud_all\" /EXCLUDE:build-sync-exclude.txt /S > NUL
 )
 ECHO.
 
